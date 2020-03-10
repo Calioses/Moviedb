@@ -14,6 +14,15 @@ class Welcome extends Component {
 }
 
 class App extends Component {
+    state = {
+        input: "Hello"
+    }
+    updateInput = (event) => {
+        console.log(event.target.value);
+        this.setState({
+            input: event.target.value.trim()
+        })
+    }
 
     submit = () => {
         console.log(this.text)
@@ -33,11 +42,11 @@ class App extends Component {
             href = "https://reactjs.org"
             target = "_blank"
             rel = "noopener noreferrer" >
-            Learn React </a>
+            Learn React </a> 
             <p className="App-intro"></p>
-
-           
-           <input type="text" ref={(input) => this.text = input}/>
+            <h3>{this.state.input}</h3>
+            <input type="text" onChange={this.updateInput} value={this.state.input}/>
+            <input type="text" ref={(input) => this.text = input}/>
             
             
             <button onClick={this.submit}> Show Value</button> 
