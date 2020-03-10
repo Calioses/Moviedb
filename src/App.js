@@ -6,9 +6,7 @@ const welcome = "Welcome to using props";
 class Welcome extends Component {
     
     render() {
-       
-        
-        
+    const { text } = this.props;
         return(
             <h1 className="App-title">{welcome}</h1>
         )
@@ -17,25 +15,9 @@ class Welcome extends Component {
 
 class App extends Component {
 
-        constructor(props){
-            super(props);
-            console.log("constructer");
-        }
-
-componentWillMount(){
-    console.log("willmount");
-}
-componentDidMount(){
-    console.log("mounted");
-}
-    state = {
-        toggle: true
-    }
-
-    toggle = () => {
-        this.setState({
-            toggle: !this.state.toggle
-        })
+    submit = () => {
+        console.log(this.text)
+        
     }
 
     render() {
@@ -45,15 +27,20 @@ componentDidMount(){
             className = "App-logo"
             alt = "logo" />
             <p>
-                <Welcome text = "Welcome to Using Props" toggle ={this.state.toggle}/>
+                <Welcome text = "Welcome to Using Props"/>
             Edit < code > src / App.js </code> and save to reload. </p > 
             <a className = "App-link"
             href = "https://reactjs.org"
             target = "_blank"
             rel = "noopener noreferrer" >
             Learn React </a>
-            <button onClick={this.toggle}>Show / Hide</button> 
-            {this.state.toggle && <p>This should show and hide</p>}
+            <p className="App-intro"></p>
+
+           
+           <input type="text" ref={(input) => this.text = input}/>
+            
+            
+            <button onClick={this.submit}> Show Value</button> 
              
            
             </header > </div>
