@@ -6,7 +6,7 @@ const welcome = "Welcome to using props";
 class Welcome extends Component {
     
     render() {
-        const { text, toggle } = this.props;
+       
         
         
         return(
@@ -17,6 +17,17 @@ class Welcome extends Component {
 
 class App extends Component {
 
+        constructor(props){
+            super(props);
+            console.log("constructer");
+        }
+
+componentWillMount(){
+    console.log("willmount");
+}
+componentDidMount(){
+    console.log("mounted");
+}
     state = {
         toggle: true
     }
