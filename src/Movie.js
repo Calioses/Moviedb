@@ -1,3 +1,5 @@
+/* eslint-disable linebreak-style */
+// eslint-disable-next-line linebreak-style
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable linebreak-style */
 /* eslint-disable react/jsx-filename-extension */
